@@ -1,0 +1,30 @@
+server:
+  port: 3334
+  
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka
+
+    
+zuul:
+  routes:
+    stock-api:
+      path: /api1/**
+      serviceId: STOCK-CALC-API  
+     
+    users:
+      path: /api2/**
+      serviceId: STOCK-PRICE-API 
+      
+
+      
+    
+spring:
+  application:
+    name: zuul-gateway
+
+    
+logging:
+  level:
+    '[com.example]': info

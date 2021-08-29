@@ -1,0 +1,40 @@
+spring:
+  application:
+    name: STOCK-PRICE-API
+    
+  jpa:
+    defer-datasource-initialization: true
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    
+    
+  datasource:
+    url: jdbc:h2:mem:test
+    username: sa
+    password:
+    driver-class-name: org.h2.Driver
+
+    
+    
+    
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+       
+    
+    
+server:
+  port: 1111
+   
+   
+eureka:
+  instance:
+    hostname: localhost
+  client:
+     serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+
+      
